@@ -41,7 +41,12 @@ class SelectController extends Controller
                
             } else if ($type == 2) {
                 $query = "SELECT mes AS value, Descripcion   as label FROM PDRMYE.Meses WHERE deleted=0 ORDER BY mes asc";
+            } else if ($type == 3) {
+                $query = "SELECT id value ,Nombre label FROM PDRMYE.Municipios ORDER BY OrdenSFTGNL";
+            } else if ($type == 4) {
+                $query = "SELECT b.id AS value, b.Clave	 as label FROM PDRMYE.Fondos b WHERE b.deleted=0";
             } 
+            
             
               $response = DB::select($query);
 
