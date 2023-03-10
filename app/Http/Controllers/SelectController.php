@@ -40,10 +40,7 @@ class SelectController extends Controller
                 $query =  $query . " AND ur.idUsuarioCentral='" . $idusuario . "'";
                
             } else if ($type == 2) {
-                // select MES
-                $response = DB::select(DB::raw("
-                SELECT mes AS value, Descripcion   as label FROM PDRMYE.Meses WHERE deleted=0 ORDER BY mes asc
-                 "));
+                $query = "SELECT mes AS value, Descripcion   as label FROM PDRMYE.Meses WHERE deleted=0 ORDER BY mes asc";
             } 
             
               $response = DB::select($query);
